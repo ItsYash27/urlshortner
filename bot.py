@@ -31,7 +31,7 @@ async def start(bot, update):
 @bot.on_message(Filters.regex(r'https?://[^\s]+') & Filters.private)
 async def link_handler(bot, update):
     link = update.matches[0].group(0)
-      try:
+      def bypassed_link():
         bypassed_link = bypasser.bypass() 
         bypassed_link = bypasser.bypass(link)
         button = [[InlineKeyboardButton("ʙʏᴘᴀssᴇᴅ ʟɪɴᴋ", url=bypassed_link)]]
